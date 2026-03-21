@@ -78,7 +78,7 @@ const Checkout = () => {
                     </div>
                     <div className="mb-3">
                       <p className="text-muted mb-1">Total Amount</p>
-                      <h3 className="fw-bold text-success mb-0">₱{formatPrice(finalTotal)}</h3>
+                      <h3 className="fw-bold text-success mb-0">{formatPrice(finalTotal)}</h3>
                     </div>
                     <div>
                       <p className="text-muted mb-1">Payment Method</p>
@@ -308,7 +308,7 @@ const Checkout = () => {
                 {/* Place Order Button */}
                 <div className="d-grid">
                   <button type="submit" className="btn btn-danger btn-lg py-3">
-                    <i className="fas fa-lock me-2"></i>Place Order - ₱{formatPrice(total)}
+                    <i className="fas fa-lock me-2"></i>Place Order - {formatPrice(total)}
                   </button>
                 </div>
 
@@ -350,7 +350,7 @@ const Checkout = () => {
                             <small className="text-muted">Qty: {item.qty}</small>
                           </div>
                         </div>
-                        <span className="fw-bold">₱{formatPrice(item.price * item.qty)}</span>
+                        <span className="fw-bold">{formatPrice(item.price * item.qty)}</span>
                       </div>
                     ))}
                   </div>
@@ -359,29 +359,25 @@ const Checkout = () => {
                   <div className="pricing-section">
                     <div className="d-flex justify-content-between mb-2">
                       <span className="text-muted">Subtotal</span>
-                      <span className="fw-bold">₱{formatPrice(subtotal)}</span>
+                      <span className="fw-bold">{formatPrice(subtotal)}</span>
                     </div>
 
                     <div className="d-flex justify-content-between mb-2">
                       <span className="text-muted">Shipping</span>
                       <span className="fw-bold">
-                        {shipping === 0 ? (
-                          <span className="text-success">FREE</span>
-                        ) : (
-                          `₱{formatPrice(shipping)}`
-                        )}
+                        {shipping === 0 ? <span className="text-success">FREE</span> : formatPrice(shipping)}
                       </span>
                     </div>
 
                     <div className="d-flex justify-content-between mb-2">
                       <span className="text-muted">Tax (12%)</span>
-                      <span className="fw-bold">₱{formatPrice(tax)}</span>
+                      <span className="fw-bold">{formatPrice(tax)}</span>
                     </div>
 
                     {shipping > 0 && (
                       <div className="alert alert-info small py-2 mb-3">
                         <i className="fas fa-info-circle me-1"></i>
-                        Add ₱{formatPrice(2500 - subtotal)} more for free shipping!
+                        Add {formatPrice(2500 - subtotal)} more for free shipping!
                       </div>
                     )}
 
@@ -389,7 +385,7 @@ const Checkout = () => {
 
                     <div className="d-flex justify-content-between align-items-center mb-4">
                       <span className="h5 fw-bold mb-0">Total</span>
-                      <span className="h3 fw-bold text-danger mb-0">₱{formatPrice(total)}</span>
+                      <span className="h3 fw-bold text-danger mb-0">{formatPrice(total)}</span>
                     </div>
                   </div>
 
