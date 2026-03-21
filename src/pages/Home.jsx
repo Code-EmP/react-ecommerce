@@ -30,7 +30,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch('https://react-ecommerce-backend-fx2i.onrender.com/api/products')
       .then((res) => res.json())
       .then((data) => {
         const formatted = data.slice(0, 4).map((item, index) => ({

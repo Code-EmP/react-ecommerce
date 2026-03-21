@@ -41,7 +41,7 @@ const ProductList = () => {
   const [maxPrice, setMaxPrice] = useState('');
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch("https://react-ecommerce-backend-fx2i.onrender.com/api/products")
       .then((res) => res.json())
       .then((data) => {
         if (!Array.isArray(data) || data.length === 0) {
