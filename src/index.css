@@ -489,3 +489,187 @@ button:focus-visible {
     align-items: flex-start !important;
   }
 }
+
+/* Product Card Base */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px !important;
+  overflow: hidden;
+  background: white;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Image Wrapper */
+.product-image-wrapper {
+  aspect-ratio: 1 / 1;
+  background: #f8f9fa;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  font-weight: 600;
+}
+
+/* Wishlist Button */
+.wishlist-btn {
+  background: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.wishlist-btn:hover {
+  background: #e94560;
+  color: white !important;
+  transform: scale(1.1);
+}
+
+.wishlist-btn i {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Image Overlay */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(233, 69, 96, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-overlay.show {
+  opacity: 1;
+}
+
+.image-overlay .btn {
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.image-overlay.show .btn {
+  transform: translateY(0);
+}
+
+/* Quick Add Button */
+.quick-add {
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.product-card:hover .quick-add {
+  transform: translateY(0);
+}
+
+.quick-add .btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.quick-add .btn:hover {
+  background: #c73e54;
+  transform: translateY(-2px);
+}
+
+.quick-add .btn.adding {
+  background: #6c757d;
+  cursor: wait;
+}
+
+/* Price Section */
+.price-section {
+  display: flex;
+  align-items: center;
+}
+
+.price-section .text-danger {
+  font-weight: 700;
+}
+
+/* Rating */
+.rating i {
+  margin-right: 2px;
+}
+
+/* Card Title Link */
+.card-title a:hover {
+  color: #e94560 !important;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .quick-add {
+    padding: 16px;
+  }
+  
+  .d-md-none {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .product-image-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+  
+  .quick-add {
+    transform: translateY(0) !important;
+    background: transparent;
+    padding: 8px 12px 12px;
+  }
+  
+  .wishlist-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Animation for adding to cart */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.quick-add .btn.adding,
+.btn-outline-danger.adding {
+  animation: pulse 0.5s ease infinite;
+}
