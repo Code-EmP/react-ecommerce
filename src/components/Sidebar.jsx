@@ -5,7 +5,7 @@ const Sidebar = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/categories")
+    fetch("https://react-ecommerce-backend-fx2i.onrender.com/api/categories")
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
