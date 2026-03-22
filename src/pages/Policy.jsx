@@ -62,7 +62,7 @@ const Policy = () => {
                         </ul>
                     </div>
 
-                    <div className="bg-light p-4 rounded">
+                    <div className="p-4 rounded">
                         <h3 className="mb-3">Questions about our policies?</h3>
                         <p>If you have any questions or concerns about our policies, please don't hesitate to <a href="/contact" className="text-primary">contact us</a>. Our customer service team is here to help!</p>
                     </div>
